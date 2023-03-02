@@ -1,17 +1,8 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 
-$("#save9am").on("click", function () {
-  localStorage.setItem("save9am", document.getElementById("text9am").value);
-});
-$("#text9am").text(localStorage.getItem("save9am"));
 
 $(function () {
   let today = dayjs();
   
-
-  $("#currentDay").text(today.format("MMM D YYYY h:mm:ss "));
   if (today.hour() < 9) {
     $("#hour-9").addClass("future");
   } else if (today.hour() > 9) {
