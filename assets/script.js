@@ -1,8 +1,36 @@
-
-
+// Eventlistener for the click on the buttons and set it in local storage
+$(".saveBtn").on("click", function () {
+  let value = $(this).siblings(".description").val();
+  let time = $(this).parent().attr("id");
+  localStorage.setItem(time, value);
+});
+// loops trugh each button and get the local storage in
+let arr = [
+  "hour-9",
+  "hour-10",
+  "hour-11",
+  "hour-12",
+  "hour-13",
+  "hour-14",
+  "hour-15",
+  "hour-16",
+  "hour-17",
+];
+for (let i = 0; i < arr.length; i++) {
+  $(`#${arr[i]} .description`).val(localStorage.getItem(arr[i]));
+}
+// timer intreval so it will refresh every second
+function setTime() {
+  let currentTime = dayjs();
+  $("#currentDay").text(currentTime.format("MMM D YYYY H:mm:ss"));
+}
+setInterval(function () {
+  setTime();
+});
+// function to match the timeslot and to apply appropriate class
 $(function () {
   let today = dayjs();
-  
+
   if (today.hour() < 9) {
     $("#hour-9").addClass("future");
   } else if (today.hour() > 9) {
@@ -66,5 +94,4 @@ $(function () {
   } else {
     $("#hour-17").addClass("present");
   }
-
 });
