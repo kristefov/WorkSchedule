@@ -4,7 +4,7 @@ $(".saveBtn").on("click", function () {
   let time = $(this).parent().attr("id");
   localStorage.setItem(time, value);
 });
-// loops trugh each button and get the local storage in
+// loops through each button and get the local storage in
 let arr = [
   "hour-9",
   "hour-10",
@@ -18,15 +18,16 @@ let arr = [
 ];
 for (let i = 0; i < arr.length; i++) {
   $(`#${arr[i]} .description`).val(localStorage.getItem(arr[i]));
-}
+};
 // timer intreval so it will refresh every second
-function setTime() {
+ async function setTime() {
   let currentTime = dayjs();
   $("#currentDay").text(currentTime.format("MMM D YYYY H:mm:ss"));
-}
-setInterval(function () {
-  setTime();
-}, 1000);
+};
+setTime();
+setInterval(setTime, 1000); 
+  
+
 // function to match the timeslot and to apply appropriate class
 $(function () {
   let today = dayjs();
