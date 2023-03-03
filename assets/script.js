@@ -26,7 +26,7 @@ function setTime() {
 }
 setInterval(function () {
   setTime();
-});
+}, 1000);
 // function to match the timeslot and to apply appropriate class
 $(function () {
   let today = dayjs();
