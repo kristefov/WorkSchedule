@@ -23,10 +23,10 @@ The Work Schedule Web Site is built using HTML, CSS, JavaScript, and jQuery. The
 ## Links
  
 * Website
-https://kristiyantefov.github.io/WorkSchedule/
+https://kristefov.github.io/WorkSchedule/
 
 * Repo
-https://github.com/kristiyantefov/WorkSchedule
+https://github.com/kristefov/WorkSchedule
 
 ## Mock-Up
 ![alt text](./img/Screenshot.png)
